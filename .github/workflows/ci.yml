@@ -27,7 +27,8 @@ jobs:
         run: docker run -d -p 8000:8000 vncrtech/cloudbank
 
       - name: Setup Workspace
-        run: |   
+        run: |
+          cd $GITHUB_WORKSPACE   
           python -m venv .venv
           .venv/Scripts/activate.bat
           pip install --upgrade robotframework-seleniumlibrary
