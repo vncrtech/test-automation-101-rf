@@ -1,7 +1,7 @@
 *** Settings ***
 Resource            ../../resources/common/loginpage/keywords_loginpage.robot
 
-Suite Setup         Open Browser    http://localhost:8000/bank/login
+Suite Setup         Open Browser    http://localhost:8000/bank/login    headlessfirefox
 Suite Teardown      Run Keywords    Click Button    ${LOGIN}    AND    Close Browser
 
 
