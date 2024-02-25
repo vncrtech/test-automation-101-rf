@@ -56,8 +56,5 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
           name: rf-results
-          path: |
-            $GITHUB_WORKSPACE/results/output.xml
-            $GITHUB_WORKSPACE/results/log.html
-            $GITHUB_WORKSPACE/results/report.html
+          path: results/
             
