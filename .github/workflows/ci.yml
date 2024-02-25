@@ -33,10 +33,9 @@ jobs:
 
       - name: Setup Workspace
         run: |
-          pwd
-        # python -m venv .venv
-        # source .venv/bin/activate
-        # pip install --upgrade robotframework-seleniumlibrary
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade robotframework-seleniumlibrary
 
 
       - name: Install Browser
@@ -52,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
           name: rf-results
-          path: $GITHUB_WORKSPACE/results
+          path: $GITHUB_WORKSPACE/results/
