@@ -33,9 +33,11 @@ jobs:
 
       - name: Setup Workspace
         run: |
+          cd
           python -m venv .venv
           source .venv/bin/activate
           pip install --upgrade robotframework-seleniumlibrary
+
 
       - name: Install Browser
         uses: abhi1693/setup-browser@v0.3.4
