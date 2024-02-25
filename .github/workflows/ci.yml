@@ -26,13 +26,18 @@ jobs:
       - name: Setup Web Application
         run: docker run -d -p 8000:8000 vncrtech/cloudbank
 
+      - name: Setup Python
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: 3.12.2
+
       - name: Setup Workspace
         run: |
           cd $GITHUB_WORKSPACE   
           python -m venv .venv
           ls
-        # .venv/Scripts/activate.bat
-        # pip install --upgrade robotframework-seleniumlibrary
+          .venv/Scripts/activate.bat
+          pip install --upgrade robotframework-seleniumlibrary
 
       - name: Setup Web Application
         run: $GITHUB_WORKSPACE/.venv/Scripts/python.exe -m robot.run --suite test-automation-101-rf.tests.smoke.login $GITHUB_WORKSPACE
