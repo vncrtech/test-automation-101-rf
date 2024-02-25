@@ -1,5 +1,8 @@
 *** Settings ***
-Resource    ../../resources/common/loginpage/keywords_loginpage.robot
+Resource            ../../resources/common/loginpage/keywords_loginpage.robot
+
+Suite Setup         Open Browser    http://localhost:8000/bank/login
+Suite Teardown      Run Keywords    Click Button    ${LOGIN}    AND    Close Browser
 
 
 *** Test Cases ***
