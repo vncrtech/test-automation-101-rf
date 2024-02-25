@@ -33,8 +33,8 @@ jobs:
 
       - name: Setup Workspace
         run: |
-          cd $GITHUB_WORKSPACE   
-          python -m venv .venv
+          cd $GITHUB_WORKSPACE 
+          python -m venv venv
           ls
           .venv/Scripts/activate.bat
           pip install --upgrade robotframework-seleniumlibrary
