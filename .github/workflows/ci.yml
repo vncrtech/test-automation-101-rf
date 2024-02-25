@@ -33,11 +33,15 @@ jobs:
 
       - name: Setup Workspace
         run: |
-          python -m venv env
-          source env/bin/activate
+          python -m venv .venv
+          source .venv/bin/activate
           pip install --upgrade robotframework-seleniumlibrary
-          cd env/bin
-          ls
+
+      - name: Install Browser
+        uses: abhi1693/setup-browser@v0.3.4
+        with:
+          browser: firefox
+          version: latest
 
       - name: Run Tests
-        run: $GITHUB_WORKSPACE/env/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login $GITHUB_WORKSPACE
+        run: $GITHUB_WORKSPACE/env/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login .
