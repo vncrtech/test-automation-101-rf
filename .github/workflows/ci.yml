@@ -47,6 +47,11 @@ jobs:
       - name: Run Tests
         run: $GITHUB_WORKSPACE/.venv/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $GITHUB_WORKSPACE/results .
 
+      - name: Show files
+        run: |
+          cd $GITHUB_WORKSPACE/results
+          ls
+
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.3.1
         with:
