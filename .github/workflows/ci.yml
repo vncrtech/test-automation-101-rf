@@ -34,8 +34,9 @@ jobs:
       - name: Setup Workspace
         run: |
           python -m venv env
+          ls
           source env/bin/activate
           pip install --upgrade robotframework-seleniumlibrary
 
-      - name: Setup Web Application
-        run: python -m robot.run --suite test-automation-101-rf.tests.smoke.login $GITHUB_WORKSPACE
+      - name: Run Tests
+        run: $GITHUB_WORKSPACE/env/bin/python.exe -m robot.run --suite test-automation-101-rf.tests.smoke.login $GITHUB_WORKSPACE
