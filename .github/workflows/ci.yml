@@ -38,4 +38,4 @@ jobs:
           pip install --upgrade robotframework-seleniumlibrary
 
       - name: Setup Web Application
-        run: $GITHUB_WORKSPACE/.venv/Scripts/python.exe -m robot.run --suite test-automation-101-rf.tests.smoke.login $GITHUB_WORKSPACE
+        run: python -m robot.run --suite test-automation-101-rf.tests.smoke.login $GITHUB_WORKSPACE
