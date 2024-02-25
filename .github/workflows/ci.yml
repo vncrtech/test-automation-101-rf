@@ -33,7 +33,7 @@ jobs:
 
       - name: Setup Workspace
         run: |
-          cd
+          pwd
         # python -m venv .venv
         # source .venv/bin/activate
         # pip install --upgrade robotframework-seleniumlibrary
