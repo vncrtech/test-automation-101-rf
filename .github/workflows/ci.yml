@@ -44,4 +44,4 @@ jobs:
           version: latest
 
       - name: Run Tests
-        run: $GITHUB_WORKSPACE/env/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login .
+        run: $GITHUB_WORKSPACE/.venv/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login .
