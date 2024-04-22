@@ -1,11 +1,11 @@
 # Test Automation 101 using Robot Framework
-This repository contains the code examples reference in the tutorial series titled **[Test Automation 101 using Robot Framework](https://vncrtech.medium.com/test-automation-101-using-robot-framework-1733761a774b)**
+This repository contains the code examples referenced in the tutorial series titled **[Test Automation 101 using Robot Framework](https://vncrtech.medium.com/test-automation-101-using-robot-framework-1733761a774b)**
 
 This tutorial series is designed for people currently working in a Software QA role who need more practical knowledge and experience in Test Automation. It is also suitable for fresh IT graduates who want to work in the QA/Test Automation field. This tutorial series is an ideal starting point for beginners.
 
 It is written in a simple format, making it easy to understand, and the technical details provided are just enough to help readers get started.
 
-I recommend that readers follow a “learn by doing” approach to get the most out of this tutorial series. By completing the activities in each article, the readers will have a hands-on experience and better understanding.
+I recommend that readers follow a **“learn by doing”** approach to get the most out of this tutorial series. By completing the activities in each article, the readers will have a hands-on experience and better understanding.
 
 The topics included are:
 1. [Setting up your Workspace — Simple and Easy](https://vncrtech.medium.com/test-automation-101-1-setting-up-your-workspace-simple-and-easy-215d99beb88e)

@@ -9,8 +9,9 @@ ${LOGIN}        css=[value="Log in"]
 
 
 *** Test Cases ***
-Go to CloudBank
-    Open Browser    http://localhost:8000/bank/login
+Go to Puppy Bank
+    Open Browser    http://localhost:8000
     Input Text    ${USERNAME}    text=admin
     Input Password    ${PASSWORD}    password=password
+    Click Button    ${LOGIN}
     Close Browser
