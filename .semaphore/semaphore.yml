@@ -34,4 +34,4 @@ blocks:
       jobs:
         - name: Run Tests
           commands:
-            - .venv/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $GITHUB_WORKSPACE/results .
+            - python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir results .
