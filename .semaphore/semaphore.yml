@@ -24,4 +24,5 @@ blocks:
             - 'docker run -d -p 8000:8000 vncrtech/puppybank'
         - name: Run Tests
           commands:
-            - $SEMAPHORE_GIT_WORKING_BRANCH/.venv/bin/python3.8 -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_WORKING_BRANCH/results .
+            - source .venv/bin/activate
+            - .venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_WORKING_BRANCH/results .
