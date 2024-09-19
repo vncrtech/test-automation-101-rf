@@ -12,17 +12,14 @@ blocks:
         - name: Checkout
           commands:
             - checkout
-        - name: Setup Workspace
+        - name: Docker Run
+          commands:
+            - 'docker run -d -p 8000:8000 vncrtech/puppybank'
+        - name: Run Tests
           commands:
             - sudo apt-get update
             - sudo apt -y install python3.8-venv
             - python -m venv .venv
             - source .venv/bin/activate
             - pip install --upgrade robotframework-seleniumlibrary
-        - name: Docker Run
-          commands:
-            - 'docker run -d -p 8000:8000 vncrtech/puppybank'
-        - name: Run Tests
-          commands:
-            - source .venv/bin/activate
             - .venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_WORKING_BRANCH/results .
