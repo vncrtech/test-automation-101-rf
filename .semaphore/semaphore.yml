@@ -22,7 +22,7 @@ blocks:
             - checkout
         - name: Setup Workspace
           commands:
-            - apt install python3.8-venv
+            - sudo apt install python3.8-venv
             - python -m venv .venv
             - source .venv/bin/activate
             - pip install --upgrade robotframework-seleniumlibrary
