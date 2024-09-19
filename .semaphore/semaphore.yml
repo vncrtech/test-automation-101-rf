@@ -5,9 +5,31 @@ agent:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: 'Block #1'
+  - name: Setup Web Application
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Docker Run
+          commands:
+            - 'docker run -d -p 8000:8000 vncrtech/puppybank'
+    dependencies:
+      - Install Dependencies
+  - name: Install Dependencies
+    dependencies: []
+    task:
+      jobs:
+        - name: Checkout
           commands:
             - checkout
+        - name: Setup Workspace
+          commands:
+            - python -m venv .venv
+            - source .venv/bin/activate
+            - pip install --upgrade robotframework-seleniumlibrary
+  - name: Run Tests
+    dependencies:
+      - Setup Web Application
+    task:
+      jobs:
+        - name: Run Tests
+          commands:
+            - .venv/bin/python3.12 -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $GITHUB_WORKSPACE/results .
