@@ -9,17 +9,15 @@ blocks:
     dependencies: []
     task:
       jobs:
-        - name: Checkout
-          commands:
-            - checkout
-        - name: Docker Run
+        - name: Setup Web Application
           commands:
             - 'docker run -d -p 8000:8000 vncrtech/puppybank'
         - name: Run Tests
           commands:
+            - checkout
             - sudo apt-get update
             - sudo apt -y install python3.8-venv
             - python -m venv .venv
             - source .venv/bin/activate
             - pip install --upgrade robotframework-seleniumlibrary
-            - $SEMAPHORE_GIT_DIR/.venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_DIR/results .
+            - .venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_DIR/results .
