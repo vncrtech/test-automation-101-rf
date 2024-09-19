@@ -22,4 +22,4 @@ blocks:
             - python -m venv .venv
             - source .venv/bin/activate
             - pip install --upgrade robotframework-seleniumlibrary
-            - .venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir results .
+            - .venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir results $SEMAPHORE_GIT_DIR
