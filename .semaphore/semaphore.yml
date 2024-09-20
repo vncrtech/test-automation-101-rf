@@ -20,4 +20,6 @@ blocks:
             - python -m venv .venv
             - source .venv/bin/activate
             - pip install --upgrade robotframework-seleniumlibrary
+            - pip install webdrivermanager
+            - webdrivermanager firefox
             - .venv/bin/python -m robot.run --suite test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_DIR/results .
