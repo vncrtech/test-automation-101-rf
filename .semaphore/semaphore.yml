@@ -19,7 +19,20 @@ blocks:
       when: branch = 'master'
     task:
       jobs:
-        - name: Browser Tests
+        - name: Test Suite
           commands:
-            - checkout
             - echo "Running browser tests..."
+          matrix:
+            - env_var: Number
+              values:
+                - '1'
+                - '2'
+                - '3'
+                - '4'
+                - '5'
+      prologue:
+        commands:
+          - checkout
+promotions:
+  - name: Promotion 1
+    pipeline_file: pipeline_3.yml

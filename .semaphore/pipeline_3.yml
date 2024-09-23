@@ -1,0 +1,13 @@
+version: v1.0
+name: Customer Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Run Tests
+    task:
+      jobs:
+        - name: E2E Test
+          commands:
+            - echo "job 1"
