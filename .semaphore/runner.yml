@@ -15,10 +15,10 @@ blocks:
         - name: Run Tests
           commands:
             - checkout
-            - echo ${TESTCASE}
+            - 'echo ${TESTCASE}'
             - sudo apt-get update
             - sudo apt -y install python3.8-venv
             - pip install --upgrade robotframework-seleniumlibrary
             - pip install webdrivermanager
             - webdrivermanager firefox
-            - .venv/bin/python -m robot.run --t ${TESTCASE} test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_DIR/results .
+            - '.venv/bin/python -m robot.run --t ${TESTCASE} test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_DIR/results .'
