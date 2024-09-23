@@ -1,0 +1,24 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Install Dependencies
+    dependencies: []
+    task:
+      jobs:
+        - name: Setup Web Application
+          commands:
+            - 'docker run -d -p 8000:8000 vncrtech/puppybank'
+        - name: Run Tests
+          commands:
+            - checkout
+            - echo $TESTCASE
+            - sudo apt-get update
+            - sudo apt -y install python3.8-venv
+            - pip install --upgrade robotframework-seleniumlibrary
+            - pip install webdrivermanager
+            - webdrivermanager firefox
+            - .venv/bin/python -m robot.run --t $TESTCASE test-automation-101-rf.tests.smoke.login --outputdir $SEMAPHORE_GIT_DIR/results .
