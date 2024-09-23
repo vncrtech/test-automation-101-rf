@@ -36,3 +36,5 @@ blocks:
 promotions:
   - name: Promotion 1
     pipeline_file: pipeline_3.yml
+    auto_promote:
+      when: branch = 'setup-semaphore' AND result = 'passed'
